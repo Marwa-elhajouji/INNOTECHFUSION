@@ -1,0 +1,25 @@
+stages:
+  - build
+  - test
+  - docker
+
+variables:
+  DOCKER_DRIVER: overlay2
+
+build_backend:
+  stage: build
+  script:
+    - cd backend
+    - mvn clean package -DskipTests
+
+test_backend:
+  stage: test
+  script:
+    - cd backend
+    - mvn test
+
+docker_build:
+  stage: docker
+  script:
+    - docker build -t backend-innotech ./backend
+    - docker build -t frontend-innotech ./frontend

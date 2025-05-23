@@ -1,0 +1,8 @@
+{
+  "java.project.referencedLibraries": [
+    "lib/**/*.jar",
+    "target/dependency/*.jar",
+    "target/classes"
+  ],
+  "java.configuration.updateBuildConfiguration": "interactive"
+}

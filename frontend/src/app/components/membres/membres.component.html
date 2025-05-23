@@ -1,0 +1,7 @@
+<h2>Liste des membres</h2>
+<ul>
+  <li *ngFor="let m of membres">
+    {{ m.prenom }} {{ m.nom }} - A voté : {{ m.aVote }}
+    <button *ngIf="!m.aVote" (click)="voter(m.id)">Voter</button>
+  </li>
+</ul>
